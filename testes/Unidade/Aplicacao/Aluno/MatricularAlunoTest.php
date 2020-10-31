@@ -1,7 +1,9 @@
 <?php
 
-use Alura\Arquitetura\Aplicaca\Aluno\MatriculaAluno\MatricularAlunoDTO;
+use Alura\Arquitetura\Aplicacao\Aluno\MatricularAluno\MatricularAluno;
+use Alura\Arquitetura\Aplicacao\Aluno\MatricularAluno\MatricularAlunoDTO;
 use Alura\Arquitetura\Dominio\Cpf;
+use Alura\Arquitetura\Infra\Aluno\RepositorioAlunoMemoria;
 use PHPUnit\Framework\TestCase;
 
 class MatricularAlunoTest extends TestCase
@@ -15,7 +17,7 @@ class MatricularAlunoTest extends TestCase
         );
 
         $repositorioAluno = new RepositorioAlunoMemoria();
-        $useCase = new MatriculaAluno($repositorioAluno);
+        $useCase = new MatricularAluno($repositorioAluno);
         $useCase->executa($dadosAluno);
 
         $aluno = $repositorioAluno->buscarPorCpf(new Cpf('123.456.789-00'));

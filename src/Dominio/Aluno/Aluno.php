@@ -28,11 +28,14 @@ class Aluno
 
     public function adicionarTelefone(string $ddd, string $numero)
     {
+        if(count($this->telefones) === 2) {
+            throw new AlunoCom2Telefones();
+        }
         $this->telefones[] = new Telefone($ddd, $numero);
         return $this;
     }
 
-    public function cpf(): string
+    public function cpf(): Cpf
     {
         return $this->cpf;
     }
