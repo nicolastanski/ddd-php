@@ -1,0 +1,22 @@
+<?php
+
+namespace Alura\Arquitetura\Gamificacao\Dominio\Selo;
+
+use Alura\Arquitetura\Dominio\Cpf;
+
+class Selo
+{
+    private Cpf $cpfAluno;
+    private string $nome;
+
+    public function __construct(Cpf $cpfAluno, string $nome)
+    {
+        $this->cpfAluno = $cpfAluno;
+        $this->nome = $nome;
+    }
+
+    public function cpfAluno(): Cpf
+    {
+        return $this->cpf;
+    }
+} 
